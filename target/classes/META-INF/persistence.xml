@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.0"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
+                                 https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <!-- ============================= -->
+    <!--  PERSISTENCE-UNIT: MySQL      -->
+    <!-- ============================= -->
+    <persistence-unit name="mysqlPU">
+		<class>vn.iotstar.entity.User</class>
+        <class>vn.iotstar.entity.Video</class>
+        <class>vn.iotstar.entity.Category</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/baitap4db?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="123456"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+        </properties>
+    </persistence-unit>
+
+
+    <!-- ============================= -->
+    <!--  PERSISTENCE-UNIT: SQL SERVER -->
+    <!-- ============================= -->
+    <!--
+    <persistence-unit name="sqlServerPU">
+
+        <class>vn.iotstar.entity.User</class>
+        <class>vn.iotstar.entity.Class</class>
+        <class>vn.iotstar.entity.Product</class>
+        <class>vn.iotstar.entity.Category</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:sqlserver://localhost:1433;databaseName=entitydb;instanceName=SQLEXPRESS;encrypt=true;trustServerCertificate=true;"/>
+            <property name="jakarta.persistence.jdbc.user" value="sa"/>
+            <property name="jakarta.persistence.jdbc.password" value="123456"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"/>
+        </properties>
+    </persistence-unit>
+	-->
+</persistence>
